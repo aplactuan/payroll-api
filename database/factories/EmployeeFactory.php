@@ -24,7 +24,6 @@ class EmployeeFactory extends Factory
     public function definition()
     {
         return [
-            'uuid' => $this->faker->uuid,
             'full_name' => $this->faker->regexify('[A-Za-z0-9]{150}'),
             'email' => $this->faker->safeEmail,
             'department_id' => Department::factory(),
