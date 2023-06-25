@@ -1,7 +1,5 @@
 <?php
 
-use function 
-
 test('example', function () {
     $response = $this->get('/');
 
