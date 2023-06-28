@@ -12,7 +12,9 @@
 */
 
 // uses(Tests\TestCase::class)->in('Feature');
+use Illuminate\Foundation\Testing\LazilyRefreshDatabase;
 
+uses(Tests\TestCase::class, LazilyRefreshDatabase::class)->in('Feature');
 /*
 |--------------------------------------------------------------------------
 | Expectations

@@ -1,7 +1,14 @@
 <?php
 
-test('example', function () {
-    $response = $this->get('/');
+use function Pest\Laravel\postJson;
 
-    $response->assertStatus(200);
+it('should create a department', function() {
+    $department = postJson(route('department.store'), [
+        'name' => 'Backend',
+        'description' => 'We are awesome backend developers'
+    ])->json('data');
+
+    expect($department)
+        ->attributes->name->toBe('Backend')
+        ->attributes->description->toBe('We are awesome backend developers');
 });
