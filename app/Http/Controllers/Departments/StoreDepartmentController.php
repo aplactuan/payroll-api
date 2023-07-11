@@ -11,6 +11,7 @@ class StoreDepartmentController extends Controller
 {
     public function __invoke(Request $request)
     {
+        dd($request);
         return DepartmentResource::make(
             Department::create($request->only('name', 'description'))
         );
